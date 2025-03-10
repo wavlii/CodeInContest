@@ -20,18 +20,31 @@ void solve()
 		e[u].emplace_back(v);
 		e[v].emplace_back(u);
 	}
-	vector<int> a(n+1);
-	auto dfs = [&](auto&& self,int u,int f)->void
+	vector<long long> a(n+1);
+	function<void(int u,int f)> dfs = [&](int u,int f)
+	{
+		for(int& v:e[u])	
+		{
+			if(v == f) continue;
+			dfs(v,u);
+			a[u] += a[v]+abs(u-v);
+		}
+	};
+	dfs(1,0);
+	// cout<<a[1]<<'\n';
+	long long ans = 1e18;
+	function<void(int,int)> dfs2 = [&](int u,int f)
 	{
 		for(int v:e[u])
 		{
 			if(v == f) continue;
-			self(self,v,u);
-			a[u] += a[v]+abs(u-v);
+			// cout<<v<<' '<<a[v]<<' '<<(u-v)<<'\n';
+			ans = min(abs(a[1]-2*a[v]-abs(u-v)),ans);
+			dfs2(v,u);
 		}
 	};
-	dfs(dfs,1,0);
-	
+	dfs2(1,0);
+	cout<<ans<<'\n';
 }
 int main()
 {

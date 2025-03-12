@@ -5,6 +5,9 @@
 // Time Limit: 2000 ms
 // 
 // Powered by CP Editor (https://cpeditor.org)
+ 
+// 交互题
+// 自己瞎搞的随机数过了，没想到正解就是随机数
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -12,9 +15,7 @@ const long long linf = ((unsigned long long)1<<63)-1;
 const int inf = ((unsigned int)1<<31)-1;
 void solve()
 {
-    
 	int n;cin>>n;
-	vector<int> vis(n+1);
 	int tn = n;
 	int a = rand()%n+1;
     int b = rand()%n+1;
@@ -52,6 +53,7 @@ void solve()
 }
 int main()
 {
+    
     cin.tie(nullptr)->sync_with_stdio(false);
     srand(time(nullptr));
     int T = 1;

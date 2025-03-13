@@ -13,42 +13,6 @@ const int inf = ((unsigned int)1<<31)-1;
 void solve()
 {
     
-	int n;cin>>n;
-	vector<int> vis(n+1);
-	int tn = n;
-	int a = rand()%n+1;
-    int b = rand()%n+1;
-    while(a == b) b = rand()%n+1;
-    int c = rand()%n+1;
-    while(c == a || c == b) c = rand()%n+1;
-    // cout<<a<<" "<<b<<' '<<c;
-	while(1)
-	{
-		if(tn == 3)
-		{
-			cout<<"! "<<a<<' '<<b<<' '<<c<<endl;	
-			return ;
-		}
-		else
-		{
-			cout<<"? "<<a<<' '<<b<<' '<<c<<endl;
-		}
-		int t;cin>>t;
-		if(t == -1) return;
-		if(t == 0) 
-		{
-			cout<<"! "<<a<<' '<<b<<' '<<c<<endl;
-			return ;
-		}
-		else
-		{
-            int tt = rand()%3;
-            if(tt == 0) a = t;
-            else if(tt == 1) b = t;
-            else c = t;
-            tn--;
-		}
-	}
 }
 int main()
 {

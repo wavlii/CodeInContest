@@ -6,7 +6,7 @@
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
-// 一开始以为很难，哎还是自己太菜了
+// 一开始以为很难，还是自己太菜了
 
 #include<bits/stdc++.h>
 using namespace std;
